@@ -191,7 +191,7 @@ func copy_tile(tile: TPTile):
 
 
 func _on_DeleteTileDialog_confirmed():
-	var tile := State.get_current_tile()
+	var tile : TPTile = State.get_current_tile()
 	if tile == null:
 		return
 	var tile_count := get_tile_count()

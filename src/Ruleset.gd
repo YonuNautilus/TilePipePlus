@@ -32,9 +32,10 @@ enum RULESET_TILE_PARTS {
 	CORNER_OUT_BOTTOM_RIGHT,
 	CORNER_OUT_BOTTOM_LEFT,
 	CORNER_OUT_TOP_LEFT,
+	MIDDLE_VERTICAL,
 }
 const RULESET_PART_OVERLAP_VECTORS := {
-	RULESET_TILE_PARTS.FULL: Vector2.ZERO,
+	RULESET_TILE_PARTS.FULL: Vector2(100,-100),
 	RULESET_TILE_PARTS.SIDE_TOP: Vector2(0, 1),
 	RULESET_TILE_PARTS.SIDE_RIGHT: Vector2(1, 0),
 	RULESET_TILE_PARTS.SIDE_BOTTOM: Vector2(0, 1),
@@ -47,6 +48,7 @@ const RULESET_PART_OVERLAP_VECTORS := {
 	RULESET_TILE_PARTS.CORNER_OUT_BOTTOM_RIGHT: Vector2(1, 1),
 	RULESET_TILE_PARTS.CORNER_OUT_BOTTOM_LEFT: Vector2(1, 1),
 	RULESET_TILE_PARTS.CORNER_OUT_TOP_LEFT: Vector2(1, 1),
+	RULESET_TILE_PARTS.MIDDLE_VERTICAL: Vector2(100, 0),
 }
 const RULESET_PART_TEXTURES := {
 	RULESET_TILE_PARTS.FULL: preload("res://assets/images/ruleset_icons/ruleset_tile_full.png"), 
@@ -62,6 +64,7 @@ const RULESET_PART_TEXTURES := {
 	RULESET_TILE_PARTS.CORNER_OUT_BOTTOM_RIGHT: preload("res://assets/images/ruleset_icons/ruleset_tile_out_bottom_right.png"), 
 	RULESET_TILE_PARTS.CORNER_OUT_BOTTOM_LEFT: preload("res://assets/images/ruleset_icons/ruleset_tile_out_bottom_left.png"), 
 	RULESET_TILE_PARTS.CORNER_OUT_TOP_LEFT: preload("res://assets/images/ruleset_icons/ruleset_tile_out_top_left.png"),
+	RULESET_TILE_PARTS.MIDDLE_VERTICAL: preload("res://assets/images/ruleset_icons/rulseset_tile_middle_vertical.png"),
 }
 const PART_HIGHLIGHT_MASKS := {
 	RULESET_TILE_PARTS.FULL: preload("res://assets/images/part_masks/tile_full.png"), 
@@ -77,6 +80,7 @@ const PART_HIGHLIGHT_MASKS := {
 	RULESET_TILE_PARTS.CORNER_OUT_BOTTOM_RIGHT: preload("res://assets/images/part_masks/tile_out_bottom_right.png"), 
 	RULESET_TILE_PARTS.CORNER_OUT_BOTTOM_LEFT: preload("res://assets/images/part_masks/tile_out_bottom_left.png"), 
 	RULESET_TILE_PARTS.CORNER_OUT_TOP_LEFT: preload("res://assets/images/part_masks/tile_out_top_left.png"),
+	RULESET_TILE_PARTS.MIDDLE_VERTICAL: preload("res://assets/images/part_masks/tile_middle_vertical.png"),
 }
 const SCHEMA_PATH := "res://rulesets/ruleset_schema.json"
 const PREVIEW_SIZE_PX := 48
@@ -95,6 +99,7 @@ const RULESET_TILE_PARSE_DATA := {
 	"CORNER_OUT_BOTTOM_RIGHT": RULESET_TILE_PARTS.CORNER_OUT_BOTTOM_RIGHT,
 	"CORNER_OUT_BOTTOM_LEFT": RULESET_TILE_PARTS.CORNER_OUT_BOTTOM_LEFT,
 	"CORNER_OUT_TOP_LEFT": RULESET_TILE_PARTS.CORNER_OUT_TOP_LEFT,
+	"MIDDLE_VERTICAL": RULESET_TILE_PARTS.MIDDLE_VERTICAL,
 }
 
 var _data := {}
